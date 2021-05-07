@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-require './token'
+# require './tokens/token'
+require './services/line_scanner'
 
 # Scans and tokenises source text.
 class Scanner
@@ -11,7 +12,7 @@ class Scanner
 
   def tokenise
     @source_file.split("\n").each do |line|
-      @tokens << Token.new(line)
+      @tokens << LineScanner.call(line)
     end
 
     @tokens
