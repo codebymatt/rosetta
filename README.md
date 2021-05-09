@@ -26,4 +26,4 @@ I'll mark each item as completed once Rosetta can convert them to its AST repres
 - [ ] Numbered and bulleted lists, as well as sub lists
 - [ ] Image embedding
 - [ ] Quotes
-- [ ] Inline code blocks and code fencing
+- [ ] Code blocks (standalone and inline)
