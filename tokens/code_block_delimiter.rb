@@ -2,14 +2,14 @@
 
 require './tokens/token'
 
-# Handles logic for Line Break tokens
-class LineBreak < Token
+# Handles logic for Header tokens
+class CodeBlockDelimiter < Token
   def self.matches?(text)
-    text == ''
+    text == '```'
   end
 
   def type
-    :LINE_BREAK
+    :CODE_BLOCK_DELIMITER
   end
 
   def value

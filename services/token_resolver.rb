@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require './services/service_base'
+require './tokens/code_block_delimiter'
 require './tokens/header'
 require './tokens/line_break'
 require './tokens/quote'
