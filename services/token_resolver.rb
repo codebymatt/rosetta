@@ -2,9 +2,10 @@
 
 require './services/service_base'
 require './tokens/header'
-require './tokens/token'
-require './tokens/paragraph'
 require './tokens/line_break'
+require './tokens/quote'
+require './tokens/text'
+require './tokens/token'
 
 # Resolves token types from source text.
 class TokenResolver < ServiceBase
@@ -17,7 +18,7 @@ class TokenResolver < ServiceBase
       return type_class.new(@text) if type_class.matches?(@text)
     end
 
-    Paragrah.new(@text)
+    Text.new(@text)
   end
 
   private
