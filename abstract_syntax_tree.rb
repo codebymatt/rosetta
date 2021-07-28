@@ -6,7 +6,7 @@ class AbstractSyntaxTree
 
   def initialize(tokens)
     @tokens = tokens
-    parse_tokens
+    # parse_tokens
   end
 
   def parse_tokens; end

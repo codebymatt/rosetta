@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require './services/token_resolver'
-
+# TODO: Deprecate!
 # Tokenises a given line
 class LineScanner < ServiceBase
   def initialize(line)
