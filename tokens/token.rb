@@ -3,7 +3,7 @@
 # Holds logic and information for token management.
 class Token
   TOP_LEVEL_CLASS_NAMES = [
-    :Header, :LineBreak, :Quote, :CodeBlockDelimiter, :BasicListItem, :NumberedListItem
+    :Header, :LineBreak, :Quote, :CodeBlockDelimiter, :BasicListItem, :NumberedListItem, :Link
   ].freeze
 
   def initialize(source_text)
