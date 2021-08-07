@@ -1,17 +1,24 @@
 # frozen_string_literal: true
 
+require './services/tree_parser'
+
 # Holds all logic for creating the AST, including parsing.
 class AbstractSyntaxTree
-  attr_reader :tokens
+  attr_reader :base_tokens
 
-  def initialize(tokens)
-    @tokens = tokens
-    # parse_tokens
+  def initialize(base_tokens)
+    @base_tokens = base_tokens
   end
 
-  def parse_tokens; end
+  def token_tree
+    @token_tree ||= TreeParser.call(@base_tokens)
+  end
 
-  def formatted_representation
-    @tokens.map(&:to_s)
+  def formatted_token_tree
+    token_tree.map(&:to_s)
+  end
+
+  def raw_tokens
+    @base_tokens.map(&:to_s)
   end
 end

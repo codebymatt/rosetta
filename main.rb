@@ -14,4 +14,6 @@ source_file = File.read(source_filename)
 source_tokens = Scanner.new(source_file).tokenise
 
 abstract_syntax_tree = AbstractSyntaxTree.new(source_tokens)
-puts abstract_syntax_tree.formatted_representation
+# puts abstract_syntax_tree.raw_tokens
+
+puts abstract_syntax_tree.formatted_token_tree

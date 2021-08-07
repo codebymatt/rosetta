@@ -34,3 +34,11 @@ I'll mark each item as completed once Rosetta can convert them to its AST repres
 - [ ] Inline URL links
 - [ ] Inline code blocks
 - [ ] Inline image embedding
+
+### Possible future syntax
+- [ ] Superscript
+- [ ] Subscript
+- [ ] Code block language types
+
+## TODOs
+* Refactor different token types

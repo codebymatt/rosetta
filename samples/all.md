@@ -13,6 +13,8 @@ end
 ###### Quotes
 > I'd rather be eating tacos.
 
+In the middle of everything, some text!
+
 ###### Bullet List
 * Thing 1
 * Thing 2
@@ -21,6 +23,8 @@ end
 ###### Another Bullet List
 - A simple list
 - With two items
+
+More text!
 
 ###### Ordered List
 1. Order one

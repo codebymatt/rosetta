@@ -6,6 +6,8 @@ class Token
     :Header, :LineBreak, :Quote, :CodeBlockDelimiter, :BasicListItem, :NumberedListItem, :Link
   ].freeze
 
+  INLINE_TOKEN_TYPES = [:BOLD, :ITALICS, :LINK, :INLINE_CODE, :STRIKETHROUGH, :TEXT].freeze
+
   def initialize(source_text)
     @source_text = source_text
   end
@@ -20,5 +22,9 @@ class Token
 
   def value
     raise 'Subclass should handle value.'
+  end
+
+  def inline?
+    INLINE_TOKEN_TYPES.include?(type)
   end
 end
