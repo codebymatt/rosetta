@@ -16,15 +16,21 @@ that AST into HTML. I'll start with a *subset* of GitHub flavoured Markdown; I u
 on a near daily basis, and if I want to use this elsewhere I probably won't have need for a full
 Markdown feature set.
 
-### Markdown syntax
+## Markdown syntax
 Rosetta will support the following features. For examples of what these look like in use,
 visit [the GitHub Markdown Guide](https://guides.github.com/features/mastering-markdown/).
 I'll mark each item as completed once Rosetta can convert them to its AST representation.
 
-- [ ] Headers from 1-6
+### Block level
+- [x] Headers from 1-6
+- [x] Numbered and bulleted lists, as well as sub lists
+- [x] Quotes
+- [x] Standalone code blocks
+- [x] Block URL links
+- [ ] Block image embedding
+
+### Inline
 - [ ] Bold, italic, strikethrough
-- [ ] Numbered and bulleted lists, as well as sub lists
-- [ ] Image embedding
-- [ ] Quotes
-- [ ] Code blocks (standalone and inline)
-- [ ] URL links
+- [ ] Inline URL links
+- [ ] Inline code blocks
+- [ ] Inline image embedding
