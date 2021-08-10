@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require './tokens/token'
+require './tokens/basic_token'
 
 # Handles logic for Text tokens.
-class Text < Token
+class Text < BasicToken
   def type
     :TEXT
   end

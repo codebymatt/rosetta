@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require './tokens/token'
+require './tokens/basic_token'
 
 # Handles logic for Header tokens
-class BasicListItem < Token
+class BasicListItem < BasicToken
   def self.matches?(text)
     text.start_with?('* ') || text.start_with?('- ')
   end

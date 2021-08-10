@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require './tokens/token'
+require './tokens/basic_token'
 
 # Handles logic for Link tokens
-class Link < Token
+class Link < BasicToken
   def self.matches?(text)
     # Naive check for standalone link.
     return false unless text[0] == '['

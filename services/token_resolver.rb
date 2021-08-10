@@ -9,7 +9,7 @@ require './tokens/link'
 require './tokens/numbered_list_item'
 require './tokens/quote'
 require './tokens/text'
-require './tokens/token'
+require './tokens/basic_token'
 
 # Resolves token types from source text.
 class TokenResolver < ServiceBase
@@ -28,7 +28,7 @@ class TokenResolver < ServiceBase
   private
 
   def top_level_token_classes
-    Token::TOP_LEVEL_CLASS_NAMES.map { |type| constantize_type(type) }
+    BasicToken::TOP_LEVEL_CLASS_NAMES.map { |type| constantize_type(type) }
   end
 
   def constantize_type(type)

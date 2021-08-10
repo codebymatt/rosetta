@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require './tokens/token'
+require './tokens/basic_token'
 
 # Handles logic for Header tokens
-class NumberedListItem < Token
+class NumberedListItem < BasicToken
   def self.matches?(text)
     return false unless number?(text[0])
 

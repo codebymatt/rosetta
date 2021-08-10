@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require './tokens/token'
+require './tokens/basic_token'
 
 # Handles logic for Line Break tokens
-class LineBreak < Token
+class LineBreak < BasicToken
   def self.matches?(text)
     text == ''
   end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-# Holds logic and information for token management.
-class Token
+# Holds logic and information for basic token management.
+class BasicToken
   TOP_LEVEL_CLASS_NAMES = [
     :Header, :LineBreak, :Quote, :CodeBlockDelimiter, :BasicListItem, :NumberedListItem, :Link
   ].freeze

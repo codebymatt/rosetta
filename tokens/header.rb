@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require './tokens/token'
+require './tokens/basic_token'
 
 # Handles logic for Header tokens
-class Header < Token
+class Header < BasicToken
   def self.matches?(text)
     return false unless text[0] == '#'
 

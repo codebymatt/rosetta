@@ -2,14 +2,16 @@
 
 require './tokens/basic_token'
 
-# Handles logic for Header tokens
-class CodeBlockDelimiter < BasicToken
+# Handles logic for Break tokens
+class Break < BasicToken
   def self.matches?(text)
-    text == '```'
+    text == ''
   end
 
+  def initialize; end
+
   def type
-    :CODE_BLOCK_DELIMITER
+    :BREAK
   end
 
   def value
