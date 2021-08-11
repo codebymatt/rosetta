@@ -10,13 +10,22 @@ require './tokens/line_break'
 require './tokens/link'
 require './tokens/numbered_list_item'
 require './tokens/paragraph'
+require './tokens/block_quote'
 require './tokens/quote'
 require './tokens/text'
 require './tokens/basic_token'
+require './tokens/basic_list'
+require './tokens/numbered_list'
 require './tokens/block_token'
 
 # Resolves token types from source text.
 class TreeParser < ServiceBase
+  BLOCK_TOKEN_TYPES = {
+    QUOTE: BlockQuote,
+    BASIC_LIST_ITEM: BasicList,
+    NUMBERED_LIST_ITEM: NumberedList
+  }.freeze
+
   def initialize(tokens)
     @tokens = tokens
     @final_index = @tokens.length - 1
@@ -34,12 +43,14 @@ class TreeParser < ServiceBase
   private
 
   def consume_next_block
-    if current_token.type == :LINE_BREAK
+    block_types = BLOCK_TOKEN_TYPES.keys + :CODE_BLOCK_DELIMITER
+
+    if block_types.includes?(current_token.type)
+      handle_generic_block_types(current_token.type)
+    elsif current_token.type == :LINE_BREAK
       match_break
     elsif current_token.inline?
       match_paragraph
-    elsif current_token.type == :CODE_BLOCK_DELIMITER
-      match_code_block
     else
       consume_current_token
     end
@@ -61,6 +72,21 @@ class TreeParser < ServiceBase
       @counter += 1
       nil
     end
+  end
+
+  def handle_generic_block_types(token_type)
+    return match_code_block if token_type == :CODE_BLOCK_DELIMITER
+
+    group_siblings_into_block(token_type)
+  end
+
+  def group_siblings_into_block(block_type)
+    block_class = BLOCK_TOKEN_TYPES[block_type]
+
+    child_tokens = []
+    child_tokens << consume_current_token while current_token.type == block_type && !end_of_file?
+
+    block_class.new(child_tokens)
   end
 
   def match_paragraph

@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# require './tokens/token'
-# require './services/line_scanner'
 require './services/token_resolver'
 
 # Scans and tokenises source text.

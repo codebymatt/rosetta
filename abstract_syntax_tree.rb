@@ -18,6 +18,10 @@ class AbstractSyntaxTree
     token_tree.map(&:to_s)
   end
 
+  def node_representation
+    token_tree.map(&:node_representation)
+  end
+
   def raw_tokens
     @base_tokens.map(&:to_s)
   end

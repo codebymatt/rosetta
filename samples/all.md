@@ -13,6 +13,7 @@ end
 
 ###### Quotes
 > I'd rather be eating tacos.
+> And writing quotes, of course.
 
 In the middle of everything, some text!
 

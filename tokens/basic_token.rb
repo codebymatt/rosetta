@@ -16,6 +16,10 @@ class BasicToken
     "<Token type='#{type}' value='#{value}'>"
   end
 
+  def node_representation
+    "<#{type} value='#{value}'>"
+  end
+
   def type
     raise 'Subclass should handle type.'
   end
