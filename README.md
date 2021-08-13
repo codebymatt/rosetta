@@ -39,6 +39,3 @@ I'll mark each item as completed once Rosetta can convert them to its AST repres
 - [ ] Superscript
 - [ ] Subscript
 - [ ] Code block language types
-
-## TODOs
-* Refactor different token types

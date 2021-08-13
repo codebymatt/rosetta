@@ -28,7 +28,6 @@ class TreeParser < ServiceBase
 
   def initialize(tokens)
     @tokens = tokens
-    @final_index = @tokens.length - 1
     @counter = 0
   end
 
@@ -43,9 +42,9 @@ class TreeParser < ServiceBase
   private
 
   def consume_next_block
-    block_types = BLOCK_TOKEN_TYPES.keys + :CODE_BLOCK_DELIMITER
+    block_types = BLOCK_TOKEN_TYPES.keys + [:CODE_BLOCK_DELIMITER]
 
-    if block_types.includes?(current_token.type)
+    if block_types.include?(current_token.type)
       handle_generic_block_types(current_token.type)
     elsif current_token.type == :LINE_BREAK
       match_break
@@ -117,6 +116,6 @@ class TreeParser < ServiceBase
   end
 
   def end_of_file?
-    @counter >= @final_index
+    @counter >= @tokens.length - 1
   end
 end

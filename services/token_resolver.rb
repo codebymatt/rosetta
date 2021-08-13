@@ -22,13 +22,17 @@ class TokenResolver < ServiceBase
       return type_class.new(@text) if type_class.matches?(@text)
     end
 
-    Text.new(@text)
+    resolve_text_block
   end
 
   private
 
   def top_level_token_classes
     BasicToken::TOP_LEVEL_CLASS_NAMES.map { |type| constantize_type(type) }
+  end
+
+  def resolve_text_block
+    Text.new(@text)
   end
 
   def constantize_type(type)

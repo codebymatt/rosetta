@@ -6,7 +6,8 @@ class BasicToken
     :Header, :LineBreak, :Quote, :CodeBlockDelimiter, :BasicListItem, :NumberedListItem, :Link
   ].freeze
 
-  INLINE_TOKEN_TYPES = [:BOLD, :ITALICS, :LINK, :INLINE_CODE, :STRIKETHROUGH, :TEXT].freeze
+  # INLINE_CLASS_NAMES = [:BOLD, :ITALICS, :LINK, :INLINE_CODE, :STRIKETHROUGH, :TEXT].freeze
+  INLINE_CLASS_NAMES = [:BOLD].freeze
 
   def initialize(source_text)
     @source_text = source_text
@@ -29,6 +30,6 @@ class BasicToken
   end
 
   def inline?
-    INLINE_TOKEN_TYPES.include?(type)
+    INLINE_CLASS_NAMES.include?(type)
   end
 end

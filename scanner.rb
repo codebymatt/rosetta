@@ -11,6 +11,6 @@ class Scanner
   def tokenise
     @source_file.split("\n").map do |line|
       TokenResolver.call(line)
-    end
+    end.flatten
   end
 end
