@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require './services/service_base'
+require './services/inline_token_resolver'
 require './tokens/basic_list_item'
 require './tokens/code_block_delimiter'
 require './tokens/header'
@@ -32,7 +33,7 @@ class TokenResolver < ServiceBase
   end
 
   def resolve_text_block
-    Text.new(@text)
+    InlineTokenResolver.call(@text)
   end
 
   def constantize_type(type)

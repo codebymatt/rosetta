@@ -17,6 +17,7 @@ require './tokens/basic_token'
 require './tokens/basic_list'
 require './tokens/numbered_list'
 require './tokens/block_token'
+require './tokens/new_line'
 
 # Resolves token types from source text.
 class TreeParser < ServiceBase
@@ -69,7 +70,7 @@ class TreeParser < ServiceBase
       Break.new
     else
       @counter += 1
-      nil
+      NewLine.new
     end
   end
 

@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
 require './tokens/basic_token'
+require 'byebug'
 
-# Handles logic for Bold tokens
-class Bold < BasicToken
-  DELIMITER_TOKEN = '*'
+# Handles logic for Strikethrough tokens
+class Strikethrough < BasicToken
+  DELIMITER_TOKEN = '~~'
 
   def self.delimiter_length
     DELIMITER_TOKEN.length
@@ -20,7 +21,8 @@ class Bold < BasicToken
   end
 
   def self.consume(raw_text)
-    delimiter_index = raw_text[delimiter_length..].index(DELIMITER_TOKEN) + delimiter_length
+    # Add an extra 1 to offset the extra delimiter length (because strikethrough).
+    delimiter_index = raw_text[delimiter_length..].index(DELIMITER_TOKEN) + delimiter_length + 1
 
     source = raw_text[0..delimiter_index]
     new(source)

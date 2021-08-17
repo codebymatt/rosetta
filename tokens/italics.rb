@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
 require './tokens/basic_token'
+require 'byebug'
 
-# Handles logic for Bold tokens
-class Bold < BasicToken
-  DELIMITER_TOKEN = '*'
+# Handles logic for Italics tokens
+class Italics < BasicToken
+  DELIMITER_TOKEN = '_'
 
   def self.delimiter_length
     DELIMITER_TOKEN.length

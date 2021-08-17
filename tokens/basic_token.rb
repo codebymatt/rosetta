@@ -7,7 +7,9 @@ class BasicToken
   ].freeze
 
   # INLINE_CLASS_NAMES = [:BOLD, :ITALICS, :LINK, :INLINE_CODE, :STRIKETHROUGH, :TEXT].freeze
-  INLINE_CLASS_NAMES = [:BOLD].freeze
+  INLINE_CLASS_NAMES = [:Bold, :Italics, :Strikethrough].freeze
+
+  attr_reader :source_text
 
   def initialize(source_text)
     @source_text = source_text
