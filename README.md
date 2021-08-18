@@ -1,4 +1,5 @@
 # rosetta
+
 A Markdown to HTML translator.
 
 **[April 15th 2021] This project is a work in progress.**
@@ -12,16 +13,18 @@ and outputs HTML. In an ideal world I'd use it as part of another project, but r
 I get that far I'm going to enjoy digging into the challenges involved.
 
 My initial plan is to try and parse Markdown source into an abstract syntax tree of some sort, and then convert
-that AST into HTML. I'll start with a *subset* of GitHub flavoured Markdown; I use GitHub's Markdown
+that AST into HTML. I'll start with a _subset_ of GitHub flavoured Markdown; I use GitHub's Markdown
 on a near daily basis, and if I want to use this elsewhere I probably won't have need for a full
 Markdown feature set.
 
 ## Markdown syntax
+
 Rosetta will support the following features. For examples of what these look like in use,
 visit [the GitHub Markdown Guide](https://guides.github.com/features/mastering-markdown/).
 I'll mark each item as completed once Rosetta can convert them to its AST representation.
 
 ### Block level
+
 - [x] Headers from 1-6
 - [x] Numbered and bulleted lists, as well as sub lists
 - [x] Quotes
@@ -30,12 +33,14 @@ I'll mark each item as completed once Rosetta can convert them to its AST repres
 - [ ] Block image embedding
 
 ### Inline
-- [ ] Bold, italic, strikethrough
+
+- [x] Bold, italic, strikethrough
 - [ ] Inline URL links
-- [ ] Inline code blocks
+- [x] Inline code blocks
 - [ ] Inline image embedding
 
 ### Possible future syntax
+
 - [ ] Superscript
 - [ ] Subscript
 - [ ] Code block language types

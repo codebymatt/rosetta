@@ -7,7 +7,7 @@ class BasicToken
   ].freeze
 
   # INLINE_CLASS_NAMES = [:BOLD, :ITALICS, :LINK, :INLINE_CODE, :STRIKETHROUGH, :TEXT].freeze
-  INLINE_CLASS_NAMES = [:Bold, :Italics, :Strikethrough].freeze
+  INLINE_CLASS_NAMES = [:Bold, :Italics, :Strikethrough, :InlineCode].freeze
 
   attr_reader :source_text
 

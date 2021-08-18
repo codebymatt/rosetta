@@ -1,24 +1,13 @@
 # frozen_string_literal: true
 
 require './tokens/basic_token'
-require 'byebug'
+require './tokens/shared/inline_tokens'
 
 # Handles logic for Strikethrough tokens
 class Strikethrough < BasicToken
+  extend Shared::InlineTokens
+
   DELIMITER_TOKEN = '~~'
-
-  def self.delimiter_length
-    DELIMITER_TOKEN.length
-  end
-
-  def self.matches?(text)
-    text.start_with?(DELIMITER_TOKEN) && valid_delimiter?(text[delimiter_length..])
-  end
-
-  def self.valid_delimiter?(text)
-    delimiter_index = text.index(DELIMITER_TOKEN)
-    !delimiter_index.nil?
-  end
 
   def self.consume(raw_text)
     # Add an extra 1 to offset the extra delimiter length (because strikethrough).

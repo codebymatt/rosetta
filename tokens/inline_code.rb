@@ -3,14 +3,18 @@
 require './tokens/basic_token'
 require './tokens/shared/inline_tokens'
 
-# Handles logic for Italics tokens
-class Italics < BasicToken
+# Handles logic for Inline Code tokens
+class InlineCode < BasicToken
   extend Shared::InlineTokens
 
-  DELIMITER_TOKEN = '_'
+  DELIMITER_TOKEN = '`'
+
+  def self.delimiter_length
+    DELIMITER_TOKEN.length
+  end
 
   def type
-    :STRIKETHROUGH
+    :INLINE_CODE
   end
 
   def value

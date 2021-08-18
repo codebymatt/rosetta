@@ -16,6 +16,8 @@ This is _italicized text_!
 
 This is ~~struck through~~!
 
+
+This is `inline code`!
 ###### Links
 
 [A link.](https://example.com)

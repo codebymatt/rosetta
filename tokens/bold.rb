@@ -1,33 +1,16 @@
 # frozen_string_literal: true
 
 require './tokens/basic_token'
+require './tokens/shared/inline_tokens'
 
 # Handles logic for Bold tokens
 class Bold < BasicToken
+  extend Shared::InlineTokens
+
   DELIMITER_TOKEN = '*'
 
-  def self.delimiter_length
-    DELIMITER_TOKEN.length
-  end
-
-  def self.matches?(text)
-    text.start_with?(DELIMITER_TOKEN) && valid_delimiter?(text[delimiter_length..])
-  end
-
-  def self.valid_delimiter?(text)
-    delimiter_index = text.index(DELIMITER_TOKEN)
-    !delimiter_index.nil?
-  end
-
-  def self.consume(raw_text)
-    delimiter_index = raw_text[delimiter_length..].index(DELIMITER_TOKEN) + delimiter_length
-
-    source = raw_text[0..delimiter_index]
-    new(source)
-  end
-
   def type
-    :STRIKETHROUGH
+    :BOLD
   end
 
   def value
