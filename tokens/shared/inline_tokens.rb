@@ -16,10 +16,10 @@ module Shared
       !delimiter_index.nil?
     end
 
-    def consume(raw_text)
-      delimiter_index = raw_text[delimiter_length..].index(delimiter_token) + delimiter_length
+    def consume(text)
+      delimiter_index = text[delimiter_length..].index(delimiter_token) + delimiter_length
 
-      source = raw_text[0..delimiter_index]
+      source = text[0..delimiter_index]
       new(source)
     end
 

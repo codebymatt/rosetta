@@ -17,6 +17,8 @@ This is _italicized text_!
 This is ~~struck through~~!
 
 
+This is an [inline) link](https://mattcraig.me)!
+
 This is `inline code`!
 ###### Links
 

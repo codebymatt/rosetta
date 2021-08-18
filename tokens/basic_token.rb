@@ -6,8 +6,7 @@ class BasicToken
     :Header, :LineBreak, :Quote, :CodeBlockDelimiter, :BasicListItem, :NumberedListItem, :Link
   ].freeze
 
-  # INLINE_CLASS_NAMES = [:BOLD, :ITALICS, :LINK, :INLINE_CODE, :STRIKETHROUGH, :TEXT].freeze
-  INLINE_CLASS_NAMES = [:Bold, :Italics, :Strikethrough, :InlineCode].freeze
+  INLINE_CLASS_NAMES = [:Bold, :Italics, :Strikethrough, :InlineCode, :Link].freeze
 
   attr_reader :source_text
 

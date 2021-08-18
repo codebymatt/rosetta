@@ -35,7 +35,7 @@ I'll mark each item as completed once Rosetta can convert them to its AST repres
 ### Inline
 
 - [x] Bold, italic, strikethrough
-- [ ] Inline URL links
+- [x] Inline URL links
 - [x] Inline code blocks
 - [ ] Inline image embedding
 
