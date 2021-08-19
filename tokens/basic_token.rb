@@ -30,7 +30,15 @@ class BasicToken
     raise 'Subclass should handle value.'
   end
 
+  # TODO: Make references to token type constant everywhere
   def inline?
-    INLINE_CLASS_NAMES.include?(type)
+    INLINE_CLASS_NAMES.include?(camel_case_type) || type == :TEXT
+  end
+
+  private
+
+  def camel_case_type
+    # Example: :INLINE_CODE -> :InlineCode
+    type.to_s.downcase.split('_').map(&:downcase).map(&:capitalize).join.to_sym
   end
 end

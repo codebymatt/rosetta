@@ -9,7 +9,7 @@ end
 ```
 
 This is *bold text*!
-
+*But* should all be part of the same paragraph.
 
 This is _italicized text_!
 

@@ -6,7 +6,9 @@ A Markdown to HTML translator.
 
 I've recently taken an interest in the syntax and semantics of programming languages, and would
 like to explore some of the practices involved in writing one. Having said that, I don't want to
-dive into writing a full featured programming language right now for various reasons.
+dive into writing a full featured programming language for various reasons, the primary one being
+that I don't have any use cases where an existing language could not trivially satisfy my programming
+needs.
 
 With that in mind I'm going to start smaller with a translator that takes a Markdown source file
 and outputs HTML. In an ideal world I'd use it as part of another project, but regardless of whether
