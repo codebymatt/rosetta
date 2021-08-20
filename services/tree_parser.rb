@@ -43,8 +43,6 @@ class TreeParser < ServiceBase
   private
 
   def consume_next_block
-    # TODO: Remove extraneous new lines between paragraphs. Only care about them in paragraphs.
-
     block_types = BLOCK_TOKEN_TYPES.keys + [:CODE_BLOCK_DELIMITER]
 
     if block_types.include?(current_token.type)
@@ -97,7 +95,6 @@ class TreeParser < ServiceBase
     child_tokens = []
 
     while !end_of_file? && (current_token.inline? || current_token.type == :NEW_LINE)
-      # byebug unless current_token.inline?
       child_tokens << consume_current_token
     end
 
