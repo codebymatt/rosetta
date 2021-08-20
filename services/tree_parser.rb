@@ -72,7 +72,9 @@ class TreeParser < ServiceBase
       Break.new
     else
       @counter += 1
-      NewLine.new
+      # We don't want to insert newlines all the time, the desired
+      # insertion is handled in paragraph grouping.
+      nil
     end
   end
 

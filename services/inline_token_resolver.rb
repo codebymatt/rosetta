@@ -5,7 +5,6 @@ require './tokens/bold'
 require './tokens/italics'
 require './tokens/strikethrough'
 require './tokens/inline_code'
-require 'byebug'
 
 # Matches and extracts tokens contained in text.
 class InlineTokenResolver < ServiceBase
@@ -17,18 +16,9 @@ class InlineTokenResolver < ServiceBase
   end
 
   def call
-    until end_of_line?
-      matching_token_type = match_token_type
-
-      if matching_token_type.nil?
-        @current_counter += 1
-      else
-        handle_matching_token(matching_token_type)
-      end
-    end
-
+    resolve_text_into_tokens until end_of_line?
     consume_plain_text_up_to(@current_counter)
-    # @tokens.last.source_text = "#{@tokens.last.source_text}\n" if @tokens.last.inline?
+
     @tokens << NewLine.new
     @tokens
   end
@@ -37,6 +27,16 @@ class InlineTokenResolver < ServiceBase
 
   def end_of_line?
     @current_counter >= @line.length - 1
+  end
+
+  def resolve_text_into_tokens
+    matching_token_type = match_token_type
+
+    if matching_token_type.nil?
+      @current_counter += 1
+    else
+      handle_matching_token(matching_token_type)
+    end
   end
 
   def match_token_type
