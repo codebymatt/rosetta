@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'byebug'
+
 # Holds logic and information for basic token management.
 class BasicToken
   TOP_LEVEL_CLASS_NAMES = [
@@ -28,6 +30,11 @@ class BasicToken
 
   def value
     raise 'Subclass should handle value.'
+  end
+
+  def accept(visitor)
+    method_name = "generate_#{type.to_s.downcase}"
+    visitor.send(method_name.to_sym, self)
   end
 
   # TODO: Make references to token type constant everywhere

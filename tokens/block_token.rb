@@ -18,8 +18,6 @@ class BlockToken
 
     contents = children.map { |token| "  #{token.node_representation}" }.join("\n")
 
-    # puts contents
-
     "#{opening_tag}\n#{contents}\n#{closing_tag}"
   end
 
@@ -29,5 +27,10 @@ class BlockToken
 
   def value
     raise 'Subclass should handle #value.'
+  end
+
+  def accept(visitor)
+    method_name = "generate_#{type.to_s.downcase}"
+    visitor.send(method_name.to_sym, self)
   end
 end

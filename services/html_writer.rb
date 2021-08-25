@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require './html_generator'
+
 # Turns a tree of tokens into it's corresponding HTML output.
 class HTMLWriter < ServiceBase
   def initialize(token_tree)
@@ -9,17 +11,13 @@ class HTMLWriter < ServiceBase
   def call
     @html_tags = ["<body>\n"]
 
-    #  Implement Visitor Pattern for HTML parsing.
-    @html_tags << @token_tree.map { |token| convert_token(token) if token.type == :HEADER_1 }.compact
+    html_generator = HTMLGenerator.new
+    @html_tags << @token_tree.map do |token|
+      html_generator.generate(token) if token.type.to_s.start_with?('HEADER')
+    end.compact
 
     @html_tags << '<body/>'
 
     @html_tags.join
-  end
-
-  private
-
-  def convert_token(token)
-    "<h1>#{token.value}<h1/>\n"
   end
 end
