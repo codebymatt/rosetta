@@ -10,7 +10,7 @@ class Italics < BasicToken
   DELIMITER_TOKEN = '_'
 
   def type
-    :STRIKETHROUGH
+    :ITALICS
   end
 
   def value

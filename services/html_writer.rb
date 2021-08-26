@@ -9,16 +9,10 @@ class HTMLWriter < ServiceBase
   end
 
   def call
-    @html_tags = ["<body>\n"]
+    @token_tree.map { |token| html_generator.generate(token) }.compact.join
+  end
 
-    html_generator = HTMLGenerator.new
-
-    @html_tags << @token_tree.map do |token|
-      html_generator.generate(token) if token.type.to_s.start_with?('HEADER') || [:BASIC_LIST, :NUMBERED_LIST].include?(token.type)
-    end.compact
-
-    @html_tags << '<body/>'
-
-    @html_tags.join
+  def html_generator
+    @html_generator ||= HTMLGenerator.new
   end
 end

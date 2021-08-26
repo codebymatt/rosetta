@@ -1,6 +1,6 @@
 # Testing all block features
 
-###### Code Blocks
+## Code Blocks
 
 ```
 def test
@@ -13,38 +13,37 @@ This is *bold text*!
 
 This is _italicized text_!
 
-
 This is ~~struck through~~!
-
 
 This is an [inline) link](https://mattcraig.me)!
 
 This is `inline code`!
-###### Links
+
+## Links
 
 [A link.](https://example.com)
 
-###### Quotes
+## Quotes
 
 > I'd rather be eating tacos.
 > And writing quotes, of course.
 
 In the middle of everything, some text!
 
-###### Bullet List
+## Bullet List
 
 - Thing 1
 - Thing 2
 - Thing 3
 
-###### Another Bullet List
+## Another Bullet List
 
 - A simple list
 - With two items
 
 More text!
 
-###### Ordered List
+## Ordered List
 
 1. Order one
 2. Order two
