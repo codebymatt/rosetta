@@ -1,11 +1,11 @@
-- [ ] Refactor to accept string input instead of a file
+- [x] Refactor to accept string input instead of a file
 - [x] Refactor Scanner into action
 - [x] Move HTML generation into formatter folder
+- [x] Gemify
 - [ ] General refactor
-- [ ] Gemify
 - [ ] Support inline nesting
 - [ ] Support block nesting
 - [ ] Revisit token matching
-- [ ] Implement visitor pattern for matching tokens?
-- [ ] Implement visitor pattern for consuming tokens?
+- [ ] Implement visitor pattern for matching tokens (?)
+- [ ] Implement visitor pattern for consuming tokens (?)
 - [ ] Add support for escaping delimiters (eg \*)
