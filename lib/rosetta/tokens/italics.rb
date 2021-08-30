@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require './tokens/basic_token'
-require './tokens/shared/inline_tokens'
+require './lib/rosetta/tokens/basic_token'
+require './lib/rosetta/tokens/shared/inline_tokens'
 
 # Handles logic for Italics tokens
 class Italics < BasicToken

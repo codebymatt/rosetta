@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
-require './tokens/text'
-require './tokens/bold'
-require './tokens/italics'
-require './tokens/strikethrough'
-require './tokens/inline_code'
+require './lib/rosetta/service_base'
+require './lib/rosetta/tokens/text'
+require './lib/rosetta/tokens/bold'
+require './lib/rosetta/tokens/italics'
+require './lib/rosetta/tokens/strikethrough'
+require './lib/rosetta/tokens/inline_code'
 
 # Matches and extracts tokens contained in text.
 class InlineTokenResolver < ServiceBase

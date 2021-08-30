@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-require './html_generator'
+require './lib/rosetta/service_base'
+require './lib/rosetta/formatters/html/html_generator'
 
 # Turns a tree of tokens into it's corresponding HTML output.
 class HTMLWriter < ServiceBase

@@ -1,3 +1,8 @@
+- [ ] Refactor to accept string input instead of a file
+- [x] Refactor Scanner into action
+- [x] Move HTML generation into formatter folder
+- [ ] General refactor
+- [ ] Gemify
 - [ ] Support inline nesting
 - [ ] Support block nesting
 - [ ] Revisit token matching

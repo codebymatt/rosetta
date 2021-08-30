@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require './tokens/basic_token'
+require './lib/rosetta/tokens/basic_token'
 
-# Handles logic for New Line tokens
-class NewLine < BasicToken
+# Handles logic for Break tokens
+class Break < BasicToken
   def self.matches?(text)
     text == ''
   end
@@ -11,7 +11,7 @@ class NewLine < BasicToken
   def initialize; end
 
   def type
-    :NEW_LINE
+    :BREAK
   end
 
   def value

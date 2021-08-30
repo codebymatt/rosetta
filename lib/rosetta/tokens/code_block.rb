@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './tokens/block_token'
+require './lib/rosetta/tokens/block_token'
 
 # Handles logic for Code Block tokens
 class CodeBlock < BlockToken

@@ -1,25 +1,25 @@
 # frozen_string_literal: true
 
-require './services/service_base'
-require './tokens/basic_list_item'
-require './tokens/code_block_delimiter'
-require './tokens/code_block'
-require './tokens/header'
-require './tokens/break'
-require './tokens/line_break'
-require './tokens/link'
-require './tokens/numbered_list_item'
-require './tokens/paragraph'
-require './tokens/block_quote'
-require './tokens/quote'
-require './tokens/text'
-require './tokens/basic_token'
-require './tokens/basic_list'
-require './tokens/numbered_list'
-require './tokens/block_token'
-require './tokens/new_line'
+require './lib/rosetta/service_base'
+require './lib/rosetta/tokens/basic_list_item'
+require './lib/rosetta/tokens/code_block_delimiter'
+require './lib/rosetta/tokens/code_block'
+require './lib/rosetta/tokens/header'
+require './lib/rosetta/tokens/break'
+require './lib/rosetta/tokens/line_break'
+require './lib/rosetta/tokens/link'
+require './lib/rosetta/tokens/numbered_list_item'
+require './lib/rosetta/tokens/paragraph'
+require './lib/rosetta/tokens/block_quote'
+require './lib/rosetta/tokens/quote'
+require './lib/rosetta/tokens/text'
+require './lib/rosetta/tokens/basic_token'
+require './lib/rosetta/tokens/basic_list'
+require './lib/rosetta/tokens/numbered_list'
+require './lib/rosetta/tokens/block_token'
+require './lib/rosetta/tokens/new_line'
 
-# Resolves token types from source text.
+# Parse tokens into AST structure.
 class TreeParser < ServiceBase
   BLOCK_TOKEN_TYPES = {
     QUOTE: BlockQuote,

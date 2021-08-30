@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require './tokens/block_token'
+require './lib/rosetta/tokens/block_token'
 
 # Handles logic for Paragraph tokens
-class BlockQuote < BlockToken
+class BasicList < BlockToken
   def type
-    :BLOCK_QUOTE
+    :BASIC_LIST
   end
 end

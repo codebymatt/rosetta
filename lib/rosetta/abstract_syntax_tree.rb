@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './services/tree_parser'
+require './lib/rosetta/services/tree_parser'
 
 # Holds all logic for creating the AST, including parsing.
 class AbstractSyntaxTree

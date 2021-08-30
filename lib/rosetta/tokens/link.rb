@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './tokens/basic_token'
+require './lib/rosetta/tokens/basic_token'
 
 # Handles logic for Link tokens
 class Link < BasicToken
