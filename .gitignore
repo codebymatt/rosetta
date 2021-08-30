@@ -16,7 +16,8 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-/.vscode/
+# Ignore VS Code settings.
+.vscode/
 
 ## Specific to RubyMotion:
 .dat*
