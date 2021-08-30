@@ -19,6 +19,8 @@
 # Ignore VS Code settings.
 .vscode/
 
+TODOS.md
+
 ## Specific to RubyMotion:
 .dat*
 .repl_history
