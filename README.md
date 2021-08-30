@@ -23,6 +23,18 @@ Markdown feature set.
 I will only set the Gem version to V1 when I'm happy with the feature set, and when tests have been written.
 If it's not 1.0.0 or greater, it's not finished and is subject to change!
 
+## Building and installing
+Version is in the format `x.y.z`
+
+To build the gem
+`gem build rosetta-ruby.gemspec`
+
+Installing a specific local version. Run from the directory the local gem is kept.
+`gem install ./rosetta-ruby-<version>.gem`
+
+Pushing the gem to RubyGems.org
+`gem push rosetta-ruby-<version>.gem`
+
 ## Markdown syntax
 
 Rosetta supports the following features. For examples of what these look like in use,
